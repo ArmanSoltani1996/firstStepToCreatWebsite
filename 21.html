@@ -1,0 +1,127 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+<script>
+function complete()
+{	
+	var pp=Number(document.getElementById("pp").value);
+	var q=Number(document.getElementById("q").value);
+	var t=pp*q;
+	document.getElementById("t").value=t;
+	document.getElementById("demo").innerHTML="complete";
+}
+function clearit()
+{	
+	document.getElementById("pn").value='';
+	document.getElementById("pp").value='';
+	document.getElementById("q").value='';
+	document.getElementById("t").value='';
+	document.getElementById("demo").innerHTML="clear";
+}
+function show()
+{	
+	var yn=document.getElementById("yn").value;
+	if(document.getElementById("ms1").checked) var ms=document.getElementById("ms1").value;
+	if(document.getElementById("ms2").checked) var ms=document.getElementById("ms2").value;
+	if(document.getElementById("sd").selectedIndex==0) sd=document.getElementById("sd").value;
+	if(document.getElementById("sd").selectedIndex==1) sd=document.getElementById("sd").value;
+	if(document.getElementById("sd").selectedIndex==2) sd=document.getElementById("sd").value;
+	var cs="";
+	if(document.getElementById("cs1").checked) cs=cs+"php";
+	if(document.getElementById("cs2").checked) cs=cs+"C#";
+	if(document.getElementById("cs3").checked) cs=cs+"css";
+	document.getElementById("td11").innerHTML="your name is:";
+	document.getElementById("td12").innerHTML=yn;
+	document.getElementById("td21").innerHTML="your ale:";
+	document.getElementById("td22").innerHTML=ms;
+	document.getElementById("td31").innerHTML="your degree:";
+	document.getElementById("td32").innerHTML=sd;
+	document.getElementById("td41").innerHTML="your skills";
+	document.getElementById("td42").innerHTML=cs;
+	document.getElementById("demo").innerHTML="showed";
+}
+function bgcolor()
+{	
+	var bgc=document.getElementById("bgc").value;
+	document.body.bgColor=bgc;
+	document.getElementById("demo").innerHTML="bg-colored";
+}
+function fgcolor()
+{	
+	var fgc=document.getElementById("fgc").value;
+	document.getElementById("t1").bgColor=fgc;
+	document.getElementById("demo").innerHTML="t1-colored";
+}
+function tcolor()
+{	
+	var tc;
+	if(document.getElementById("tc1").checked) tc=document.getElementById("tc1").value;
+	if(document.getElementById("tc2").checked) tc=document.getElementById("tc2").value;
+	if(document.getElementById("tc3").checked) tc=document.getElementById("tc3").value;
+	document.getElementById("t2").bgColor=tc;
+	document.getElementById("demo").innerHTML="t-2colored";
+}
+function tran()
+{	
+	var fnum=document.getElementById("fnum").value;
+	if(document.getElementById("trans").value=="ctof") var snum=Number(fnum)*3;
+	if(document.getElementById("trans").value=="ftoc") var snum=Number(fnum)/3;
+	document.getElementById("snum").value=snum;
+	document.getElementById("demo").innerHTML="transmited";
+}
+</script>
+</head>
+<body>
+<form id="f1">
+<table id="t1">
+<tr>
+<td>Product Name:</td><td><input id="pn" type="text" width="20" maxlength="20"></td>
+</tr><tr>
+<td>Product Pric:</td><td><input id="pp" type="text" width="20" maxlength="20"></td>
+</tr><tr>
+<td>Quantity:</td><td><input id="q" type="text" width="20" maxlength="20"></td>
+</tr><tr>
+<td>Total:</td><td><input id="t" type="text" width="20" maxlength="20"></td>
+</tr></table>
+<input type="button" id="com" value="complete" onClick="complete()">
+<input type="button" id="clr" value="clear" onClick="clearit()">
+</form>
+<form id="f2">
+<table id="t2">
+<tr>
+<td>Enter Your Name:</td><td><input id="yn" type="text" width="20" maxlength="20"></td>
+</tr><tr>
+<td>Material Status:</td><td>Married<input id="ms1" type="radio" name="material" value="married">Single<input id="ms2" type="radio" name="material" value="single"></td>
+</tr><tr>
+<td>Select Your Degree:</td><td><select id="sd"><option>diploma</option><option>BSC</option><option>phD</option></select></td>
+</tr><tr>
+<td>Check Skill You Have:</td><td>PHP<input id="cs1" type="checkbox">C#<input id="cs2" type="checkbox">CSS<input id="cs3" type="checkbox"></td>
+</tr></table>
+<input type="button" id="display" value="display" onClick="show()">
+</form>
+<form id="f3">
+Select Background Color:<select id="bgc" onChange="bgcolor()"><option>red</option><option>green</option><option>blue</option></select><br>
+Select Foreground Color:<select id="fgc" onChange="fgcolor()"><option>red</option><option>green</option><option>blue</option></select>
+<br>
+Color: red<input id="tc1" type="radio" name="tc" value="red" onClick="tcolor()">green<input id="tc2" type="radio" name="tc" value="green" onClick="tcolor()">blue<input id="tc3" type="radio" name="tc" value="blue" onClick="tcolor()">
+</form>
+<form id="f4">
+<table id="t3">
+<tr>
+<td><input id="fnum" type="text"></td><td><select id="trans" onChange="tran()"><option value="ctof">C to F</option><option value="ftoc">F to C</option></td><td><input id="snum" type="text"></td>
+</tr>
+</table>
+</form>
+<table id="t2">
+<tr>
+<td id="td11"></td><td id="td12"></td>
+</tr><tr>
+<td id="td21"></td><td id="td22"></td>
+</tr><tr>
+<td id="td31"></td><td id="td32"></td>
+</tr><tr>
+<td id="td41"></td><td id="td42"></td>
+</tr></table>
+<p id="demo"></p>
+</body>
+</html>
