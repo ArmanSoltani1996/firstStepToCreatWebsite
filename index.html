@@ -1,127 +1,415 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>index</title>
+<!DOCTYPE html>
+<html>
+<title>armansoltani</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<body class="w3-black">
 <script>
-function complete()
-{	
-	var pp=Number(document.getElementById("pp").value);
-	var q=Number(document.getElementById("q").value);
-	var t=pp*q;
-	document.getElementById("t").value=t;
-	document.getElementById("demo").innerHTML="complete";
-}
-function clearit()
-{	
-	document.getElementById("pn").value='';
-	document.getElementById("pp").value='';
-	document.getElementById("q").value='';
-	document.getElementById("t").value='';
-	document.getElementById("demo").innerHTML="clear";
-}
-function show()
-{	
-	var yn=document.getElementById("yn").value;
-	if(document.getElementById("ms1").checked) var ms=document.getElementById("ms1").value;
-	if(document.getElementById("ms2").checked) var ms=document.getElementById("ms2").value;
-	if(document.getElementById("sd").selectedIndex==0) sd=document.getElementById("sd").value;
-	if(document.getElementById("sd").selectedIndex==1) sd=document.getElementById("sd").value;
-	if(document.getElementById("sd").selectedIndex==2) sd=document.getElementById("sd").value;
-	var cs="";
-	if(document.getElementById("cs1").checked) cs=cs+"php";
-	if(document.getElementById("cs2").checked) cs=cs+"C#";
-	if(document.getElementById("cs3").checked) cs=cs+"css";
-	document.getElementById("td11").innerHTML="your name is:";
-	document.getElementById("td12").innerHTML=yn;
-	document.getElementById("td21").innerHTML="your ale:";
-	document.getElementById("td22").innerHTML=ms;
-	document.getElementById("td31").innerHTML="your degree:";
-	document.getElementById("td32").innerHTML=sd;
-	document.getElementById("td41").innerHTML="your skills";
-	document.getElementById("td42").innerHTML=cs;
-	document.getElementById("demo").innerHTML="showed";
-}
-function bgcolor()
-{	
-	var bgc=document.getElementById("bgc").value;
-	document.body.bgColor=bgc;
-	document.getElementById("demo").innerHTML="bg-colored";
-}
-function fgcolor()
-{	
-	var fgc=document.getElementById("fgc").value;
-	document.getElementById("t1").bgColor=fgc;
-	document.getElementById("demo").innerHTML="t1-colored";
-}
-function tcolor()
-{	
-	var tc;
-	if(document.getElementById("tc1").checked) tc=document.getElementById("tc1").value;
-	if(document.getElementById("tc2").checked) tc=document.getElementById("tc2").value;
-	if(document.getElementById("tc3").checked) tc=document.getElementById("tc3").value;
-	document.getElementById("t2").bgColor=tc;
-	document.getElementById("demo").innerHTML="t-2colored";
-}
-function tran()
-{	
-	var fnum=document.getElementById("fnum").value;
-	if(document.getElementById("trans").value=="ctof") var snum=Number(fnum)*3;
-	if(document.getElementById("trans").value=="ftoc") var snum=Number(fnum)/3;
-	document.getElementById("snum").value=snum;
-	document.getElementById("demo").innerHTML="transmited";
+function sendMessage()
+{
+	alert("Message can not be send,\Please choose another way to contact");
 }
 </script>
-</head>
-<body>
-<form id="f1">
-<table id="t1">
-<tr>
-<td>Product Name:</td><td><input id="pn" type="text" width="20" maxlength="20"></td>
-</tr><tr>
-<td>Product Pric:</td><td><input id="pp" type="text" width="20" maxlength="20"></td>
-</tr><tr>
-<td>Quantity:</td><td><input id="q" type="text" width="20" maxlength="20"></td>
-</tr><tr>
-<td>Total:</td><td><input id="t" type="text" width="20" maxlength="20"></td>
-</tr></table>
-<input type="button" id="com" value="complete" onClick="complete()">
-<input type="button" id="clr" value="clear" onClick="clearit()">
-</form>
-<form id="f2">
-<table id="t2">
-<tr>
-<td>Enter Your Name:</td><td><input id="yn" type="text" width="20" maxlength="20"></td>
-</tr><tr>
-<td>Material Status:</td><td>Married<input id="ms1" type="radio" name="material" value="married">Single<input id="ms2" type="radio" name="material" value="single"></td>
-</tr><tr>
-<td>Select Your Degree:</td><td><select id="sd"><option>diploma</option><option>BSC</option><option>phD</option></select></td>
-</tr><tr>
-<td>Check Skill You Have:</td><td>PHP<input id="cs1" type="checkbox">C#<input id="cs2" type="checkbox">CSS<input id="cs3" type="checkbox"></td>
-</tr></table>
-<input type="button" id="display" value="display" onClick="show()">
-</form>
-<form id="f3">
-Select Background Color:<select id="bgc" onChange="bgcolor()"><option>red</option><option>green</option><option>blue</option></select><br>
-Select Foreground Color:<select id="fgc" onChange="fgcolor()"><option>red</option><option>green</option><option>blue</option></select>
-<br>
-Color: red<input id="tc1" type="radio" name="tc" value="red" onClick="tcolor()">green<input id="tc2" type="radio" name="tc" value="green" onClick="tcolor()">blue<input id="tc3" type="radio" name="tc" value="blue" onClick="tcolor()">
-</form>
-<form id="f4">
-<table id="t3">
-<tr>
-<td><input id="fnum" type="text"></td><td><select id="trans" onChange="tran()"><option value="ctof">C to F</option><option value="ftoc">F to C</option></td><td><input id="snum" type="text"></td>
-</tr>
-</table>
-</form>
-<table id="t2">
-<tr>
-<td id="td11"></td><td id="td12"></td>
-</tr><tr>
-<td id="td21"></td><td id="td22"></td>
-</tr><tr>
-<td id="td31"></td><td id="td32"></td>
-</tr><tr>
-<td id="td41"></td><td id="td42"></td>
-</tr></table>
-<p id="demo"></p>
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <!--	<img src="/w3images/avatar_smoke.jpg" style="width:100%"> -->
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#resume" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-check-circle w3-xxlarge"></i>
+    <p>RESUME</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#resume" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Arman Soltani</h1>
+    <p>Electronic engineer and Sport Manager.</p>
+    <!-- <img src="/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108"> -->
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">My Name</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>I was born on january twenty sixth nineteen ninty six.
+    I was born and grow up in shiraz one of a large cities in iran.
+    I have bachelor degree  and i'm graduated from shiraz university in the field of electerical enginering
+    I have natural talent for all kind of sports.
+    As a computer programmer i am one of a kind.
+    I can designe and run electerical module.
+    At last but not least i have a knack for making people happy.
+    I get a lot of pleasure from communicating with people.
+    I have a lot of hobbies that devided to excersising and programming
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+    <p class="w3-wide">Programming</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div>
+    <p class="w3-wide">Engineering Software</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div>
+    <p class="w3-wide">Teaching</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+    </div>
+    <p class="w3-wide">Sport Managing</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+    </div>
+    <p class="w3-wide">Web Design</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:45%"></div>
+    </div>
+    <p class="w3-wide">Photoshop</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:40%"></div>
+    </div><br>
+    
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">8+</span><br>
+        Teaching assistannt experiences
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">55+</span><br>
+        Projects Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">15+</span><br>
+        Researches
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">350+</span><br>
+        Students
+      </div>
+    </div>
+    
+    <!-- Grid for pricing tables -->
+    <!--
+    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">5GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      -->
+    <!-- End Grid/Pricing tables -->
+    </div>
+    
+    <!-- Testimonials -->
+    <!--
+    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+    <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+    <p>Jane Doe saved us from a web disaster.</p><br>
+    
+    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than Jane Doe.</p>
+    -->
+  <!-- End About Section -->
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="resume">
+    <h2 class="w3-text-light-grey">My Resume</h2>
+    <hr style="width:200px" class="w3-opacity">
+	<h4>Education</h4>
+    <div id="education" class="w3-justify w3-text-grey">
+    	<table width="100%">
+        <tr>
+        <td width="50%">Shiraz university , Shiraz,Iran</td><td width="50%">September 2014 - January 2019</td>
+        </tr>
+        <tr>
+        <td width="50%">Shahid Dastgheib 2 Highschool, Shiraz,Iran</td><td width="50%">September 2010 - June 2014</td>
+        </tr>
+        </table>
+    </div>
+    <h4>Reaserch Interests</h4>
+    <div id="reaserch interests" class="w3-justify w3-text-grey">
+    	<table width="100%">
+        <tr>
+        <td width="50%"><ul>
+        <li>Embedded system</li>
+        <li>Digital Design</li>
+        <li>Computer Arithmetic</li>
+        <li>Signal Processing</li>
+        </ul></td>
+        <td width="50%"><ul>
+        <li>Image Processing</li>
+        <li>Articial Intelligence</li>
+        <li>Bio electronics</li>
+        <li>Biomedical engineering</li>
+        </ul></td>
+        </tr>
+        </table>
+    </div>
+    <h4>Selected Experiences</h4>
+    <div id="selected experiences" class="w3-justify w3-text-grey">
+    	<ul>
+        <li>Teaching Assistant<br>
+        <table width="100%" id="teaching assistant">
+        <tr>
+        <td width="70%">Computer Architecture: In collaboration with Prof. Navid Yasrebi</td>
+        </tr>
+        <tr>
+        <td width="70%">Logical Circuits: In collaboration with Prof. Navid Yasrebi</td>
+        </tr>
+        <tr>
+        <td width="70%">Logical Circuits: In collaboration with Prof. Mehran Yazdi</td>
+        </tr>
+        <tr>
+        <td width="70%">Logical Circuits Lab: In collaboration with Prof. Navid Yasrebi</td>
+        </tr>
+        <tr>
+        <td width="70%">Logical Circuits Lab: In collaboration with Prof. Mehran Yazdi</td>
+        </tr>
+        <tr>
+        <td width="70%">Logical Circuits Lab: In collaboration with Prof. Mahmood Farhang</td>
+        </tr>
+        <tr>
+        <td width="70%">Probability: In collaboration with Prof. Mostafa Derakhtian and Mohammad Hosein Enjavi</td>
+        </tr>
+        <tr>
+        <td width="70%">Communication: In collaboration with Prof. Abbas Sheikhi and Mohammad Hosein Enjavi</td>
+        </tr>
+        </table>
+        </li>
+        <li>Instructor for software learning<br>
+        <table width="100%" id="instructor for software learning">
+        <tr>
+        <td width="25%">Matlab</td><td width="25%">Xillinx</td><td width="25%">Logic Works</td><td width="25%">Proteus</td>
+        </tr>
+        </table>
+        </li>
+        <li>Researches<br>
+        <table id="researches">
+        <tr>
+        <td width="50%">ADSL protocol</td><td width="50%">supervised by Prof. H. Keshavarz</td>
+        </tr>
+        <tr>
+        <td width="50%">USB interface</td><td width="50%">supervised by Prof. N. Yasrebi</td>
+        </tr>
+        </table>
+        </li>
+        <li>Design Digital Lock with Logic Works and Implement it on Bread board</li>
+        <li>Design Analog AM Modulator with ADS ,Its Printed Circuit Board with Altium Designer and Implement it on board</li>
+ 		<li>Design Digital AM Modulator with Xilinx and Implement it on FPGA Spartan 6 development board</li>
+		<li>Design Efficient Vector Processor with Xilinx and Implement it on FPGA Spartan 6 development board</li>
+        <li>Surgical room engineer Assistant at Namazi Hospital</li>
+        </ul>
+    </div>
+    <h4>Activities and Honors</h4>
+    <div id="activities and honors" class="w3-justify w3-text-grey">
+    	Member of the IEEE student branch of Shiraz University<br>
+		Member of the scientic association of Shiraz University<br>
+		Leader of the procurement group of BTIU conference<br>
+		Referee of Ebn Sina Competition<br>
+		Member of the student committee of radar conference<br>
+		Member of choir music group of Shiraz University<br>
+		Member of faculty of engineering football team<br>
+		Attending crosst and functional training workshop<br>
+		Participation in RoboCup Iran Open 2010<br>
+		Physical Fitness Coaching licence<br>
+		C Sharp Programing language licence<br>
+		HTML Web designing language licence<br>
+		UNIX user licence<br>
+    </div>
+    <h4>Skills</h4>
+    <div id="skills" class="w3-justify w3-text-grey">
+		<ul>
+        <li>Programming Skills<br>
+    	<table width="100%">
+        <tr>
+        <td width="50%">Matlab</td><td width="50%">Latex</td>
+        </tr>
+        <tr>
+        <td width="50%">Verilog</td><td width="50%">Q/V Basic</td>
+        </tr>
+        <tr>
+        <td width="50%">C/C++</td><td width="50%">HTML/CSS</td>
+        </tr>
+        <tr>
+        <td width="50%">Assembly</td>
+        </tr>
+        </table>
+        </li><br>
+        <li>Engineering Software Skills
+    	<table width="100%">
+        <tr>
+        <td width="50%">AVR(CodeVision)</td><td width="50%">Pspice</td>
+        </tr>
+        <tr>
+        <td width="50%">ISIM</td><td width="50%">ARM(Keil)</td>
+        </tr>
+        <tr>
+        <td width="50%">Xillinx ISE</td><td width="50%">Altium Designer</td>
+        </tr>
+        <tr>
+        <td width="50%">LogicWorks</td><td width="50%">ADS</td>
+        </tr>
+        <tr>
+        <td width="50%">Proteus</td><td width="50%">Arduino</td>
+        </tr>
+        </table>
+        </li><br>
+        <li>Teaching Majors
+    	<table width="100%">
+        <tr>
+        <td width="50%">Computer Architecture</td><td width="50%">Micro Controllers</td>
+        </tr>
+        <tr>
+        <td width="50%">FPGAs</td><td width="50%">Logical Circuits</td>
+        </tr>
+        <tr>
+        <td width="50%">Micro Processors</td>
+        </table>
+        </li>
+        </ul>
+    </div>
+    <h4>Languages</h4>
+    <div id="languages" class="w3-justify w3-text-grey">
+    	<table width="100%">
+        <tr>
+        <td width="25%">Persian</td><td width="25%">German</td>
+        <td width="25%">English</td>
+        </tr>
+        </table> 
+    </div>
+    <!--	<button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    -->
+    <!-- Grid for photos -->
+    <!--
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="/w3images/wedding.jpg" style="width:100%">
+        <img src="/w3images/rocks.jpg" style="width:100%">
+        <img src="/w3images/sailboat.jpg" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="/w3images/underwater.jpg" style="width:100%">
+        <img src="/w3images/chef.jpg" style="width:100%">
+        <img src="/w3images/wedding.jpg" style="width:100%">
+        <img src="/w3images/p6.jpg" style="width:100%">
+      </div>
+     -->
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Shiraz, IR</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +989176339195</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email:arman.soltani.as@gmail.com</p>
+    </div><br>
+    <p>Lets get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit" onClick="sendMessage()">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <a href="https://www.facebook.com/arman.soltani.564"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/arman_sltn"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <!--	<i class="fa fa-snapchat w3-hover-opacity"></i>	-->
+    <!--	<i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
+    <a href="https://telegram.me/soltani_arman"><i class="fa fa-telegram w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/armansoltani11"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/arman-soltani"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <!-- <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
 </body>
 </html>
