@@ -109,63 +109,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   transform: translate(-50%, -5px);
 }
 
-/* From Uiverse.io by gharsh11032000 */ 
-/* This is an example, feel free to delete this code */
-.name-container {
-  position: relative;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  font-size: 18px;
-  font-weight: 600;
-  padding: 0.7em 1.8em;
-  text-transform: uppercase;
-  height: 60px;
-  width: 180px;
-  display: grid;
-  place-items: center;
-}
-
-.name-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  transform-origin: -100%;
-  transform: scale(1);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.name-container span:last-child {
-  position: absolute;
-  top: 0%;
-  left: 100%;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  z-index: -1;
-  transform: scale(0);
-  transform-origin: 0;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  display: grid;
-  place-items: center;
-}
-
-.name-container:hover span:last-child {
-  transform: scale(1);
-  left: 0;
-}
-
-.name-container:hover .name-header {
-  opacity: 0;
-  top: 0%;
-  left: 100%;
-  transform: scale(0);
-}
-
-
 </style>
 </head>
 <body class="w3-black">
@@ -209,13 +152,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <!-- Page Content -->
 <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
-<!--   <header class="w3-container w3-padding-32 w3-center w3-black" id="home"> -->
-	<div class="name-container">
-<!-- 		<h1 class="w3-jumbo">Arman Soltani</h1> -->
-		<span class="name-header">Arman Soltani</span>
-  		<span style="color:white">Hello!</span>
-	</div> 
-<!--   </header> -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+	<h1 class="w3-jumbo">Arman Soltani</h1>
+  </header>
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
     <h2 class="w3-text-light-grey">My Bio</h2>
@@ -299,13 +238,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
         <span>Data Scientist, Decopart Group, Shiraz, Iran</span><br>
         <span>Data Scientist, Adina Beauty Clinic Center, Shiraz, Iran</span><br>
-        <span>Web developer, <a href="https://blueagency.ir/">blueagency</a>
-<!-- 		<div class="exlink-container">
-		  <a href="https://blueagency.ir/">blueagency</a>
-		  <a class="exlink" href="https://blueagency.ir/" style="text-decoration:none;">blueagency.ir</a>
-		</div> -->
-		, Shiraz, Iran
-	</span><br>
+        <span>Web developer, <a href="https://blueagency.ir/">blueagency</a> , Shiraz, Iran</span><br>
         <span>Web developer, <a href="https://radanwin.ir/"> Radan Window</a> , Shiraz, Iran</span><br>
         <span>Web developer, <a href="https://mokolock.com/"> Mokolock</a> , Shiraz, Iran</span><br>
     </div>
