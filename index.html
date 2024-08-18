@@ -18,6 +18,53 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+	/* From Uiverse.io by Navarog21 */ 
+.d_button {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #149CEA;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.d_button::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #212121;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.d_button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #212121;
+  transition: 0.5s;
+}
+
+.d_button:hover::before, .d_button:hover::after {
+  transform: scale(0)
+}
+
+.d_button:hover {
+  box-shadow: inset 0px 0px 25px #1479EA;
+}
 </style>
 </head>
 <body class="w3-black">
@@ -360,6 +407,11 @@ function sendMessage()
 	  <a href="https://www.py4e.com/lessons"> <input type="button" class="w3-button w3-light-grey w3-padding-large" name="Python introduction" value="Python introduction"> </a>
 	  <a href="crypto by Arman.pdf"> <input type="button" class="w3-button w3-light-grey w3-padding-large" name="Cryptocurrencies introduction" value="Cryptocurrencies introduction"> </a>
 	  <a href="sixp by Arman.pdf"> <input type="button" class="w3-button w3-light-grey w3-padding-large" name="SixpackMiner introduction" value="SixpackMiner introduction"> </a>
+	  
+	  <a href="Arman Soltani - CV.pdf"> <input type="button" class="d_button" name="Download CV" value="Download my CV"> </a>
+	  <a href="https://www.py4e.com/lessons"> <input type="button" class="d_button" name="Python introduction" value="Python introduction"> </a>
+	  <a href="crypto by Arman.pdf"> <input type="button" class="d_button" name="Cryptocurrencies introduction" value="Cryptocurrencies introduction"> </a>
+	  <a href="sixp by Arman.pdf"> <input type="button" class="d_button" name="SixpackMiner introduction" value="SixpackMiner introduction"> </a>
   </div>
 
 
