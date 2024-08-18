@@ -65,6 +65,50 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .d_button:hover {
   box-shadow: inset 0px 0px 25px #adcee0;
 }
+
+.exlink-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+.exlink{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  background: #0b798a;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.exlink::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  color: black;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #d7d8d9 transparent;
+  transform: translateX(-50%);
+}
+
+.exlink-container:hover .exlink{
+  top: 120%;
+  opacity: 1;
+  color: black;
+  visibility: visible;
+  background: #d7d8d9;
+  transform: translate(-50%, -5px);
+}
+
 </style>
 </head>
 <body class="w3-black">
@@ -153,11 +197,11 @@ function sendMessage()
     <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
     <p class="w3-wide">Programming</p>
     <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:75%;transition: 0.5s"></div>
+      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
     </div>
     <p class="w3-wide">Engineering Software</p>
     <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:85%;transition: 1s"></div>
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
     </div>
     <p class="w3-wide">Teaching</p>
     <div class="w3-white">
@@ -226,7 +270,14 @@ function sendMessage()
         <td width="50%">Data Scientist, Adina Beauty Clinic Center, Shiraz, Iran</td><td width="50%"></td>
         </tr>	
 	<tr>
-        <td width="50%">Web developer, <a href="https://blueagency.ir/"> Blueagancy</a> , Shiraz, Iran</td><td width="50%"></td>
+        <td width="50%">
+		Web developer, 
+		<div class="exlink-container">
+		  <a href="https://blueagency.ir/" style="text-decoration:none;">blueagency</span>
+		  <a class="exlink" href="https://blueagency.ir/" style="text-decoration:none;">blueagency.ir</span>
+		</div>
+		, Shiraz, Iran</td><td width="50%">	
+		</td>
         </tr>
 	<tr>
         <td width="50%">Web developer, <a href="https://radanwin.ir/"> Radan Window</a> , Shiraz, Iran</td><td width="50%"></td>
