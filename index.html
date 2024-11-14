@@ -120,13 +120,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	  letter-spacing: .01em; /* Adjust as needed */
 	  text-align: center;
 	  animation: 
-	    typing 3.5s steps(40, end),
-	    blink-caret .75s step-end infinite;
+	    typing 2s steps(22), blink .5s step-end infinite alternate;
 	  }
 	
 	/* The typing effect */
 	@keyframes typing {
-	  from { width: 0% }
+	  from { width: 0 }
 /* 	  to { width: 100% } */
 	}
 	
@@ -148,14 +147,13 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	  letter-spacing: .01em; /* Adjust as needed */
 	  text-align: center;
 	  animation: 
-	    typing 3.5s steps(40, end),
-	    blink-caret .75s step-end infinite;
+	    typing 3.5s steps(40, end) blink-caret .75s step-end infinite;
 	  }
 	
 	/* The typing effect */
 	@keyframes typing {
 	  from { width: 0% }
-/* 	  to { width: 100% } */
+	  to { width: 100% }
 	}
 	
 	/* The typewriter cursor effect */
