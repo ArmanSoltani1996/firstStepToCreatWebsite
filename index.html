@@ -119,21 +119,21 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 	  letter-spacing: .01em; /* Adjust as needed */
 	  text-align: center;
-	  animation: typing 2s steps(40, end), blink-caret .5s step-end infinite;
+	  animation: 
+	    typing 3.5s steps(30, end),
+	    blink-caret .5s step-end infinite;
 	  }
 	
 	/* The typing effect */
 	@keyframes typing {
-	  from {
-	    width: 0
-	  }
+	  from { width: 0 }
+  	  to { width: 100% }
 	}
 	
 	/* The typewriter cursor effect */
 	@keyframes blink-caret {
-	  	50% {
-	    border-color: transparent
-	  }
+	  from, to { border-color: transparent }
+  	  50% { border-color: white }
 	}
 }
 @media screen and (max-width: 601px) {
