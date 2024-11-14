@@ -108,31 +108,33 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   background: #d7d8d9;
   transform: translate(-50%, -5px);
 }
-
-.typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .01em; /* Adjust as needed */
-  margin-left:20%;
-  margin-right:20%;
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+@media screen and (min-width: 600px) {
+	  .typewriter h1 {
+	  overflow: hidden; /* Ensures the content is not revealed until the animation */
+	  border-right: .15em solid orange; /* The typwriter cursor */
+	  white-space: nowrap; /* Keeps the content on a single line */
+	  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	  letter-spacing: .01em; /* Adjust as needed */
+	  margin-left:20%;
+	  margin-right:20%;
+	  animation: 
+	    typing 3.5s steps(40, end),
+	    blink-caret .75s step-end infinite;
+	  }
+	
+	/* The typing effect */
+	@keyframes typing {
+	  from { width: 30% }
+	  to { width: 70% }
+	}
+	
+	/* The typewriter cursor effect */
+	@keyframes blink-caret {
+	  from, to { border-color: transparent }
+	  50% { border-color: white; }
+	}
 }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 30% }
-  to { width: 70% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
-}
 
 
 </style>
