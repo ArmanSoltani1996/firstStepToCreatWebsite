@@ -113,25 +113,21 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   color: white;
   text-decoration: none;
   background:
-    linear-gradient(
-      to right,
-      rgba(100, 200, 200, 1),
-      rgba(100, 200, 200, 1)
-    ),
+    inherit,
     linear-gradient(
       to right,
       rgba(255, 0, 0, 1),
       rgba(255, 0, 180, 1),
       rgba(0, 100, 200, 1)
   );
-  background-size: 100% 3px, 0 3px;
+  background-size: 100% 1px, 0 1px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
 
 .links:hover {
-  background-size: 0 3px, 100% 3px;
+  background-size: 0 1px, 100% 1px;
 }
 
 @media screen and (min-width: 600px) {
