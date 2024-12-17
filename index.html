@@ -20,9 +20,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 	/* From Uiverse.io by Navarog21 */ 
 
-@media screen and (max-width: 600px) {
 	.DLbuttun {
-		width:100%;
+		padding:5px;
 	}
 	.d_button {
 	  width: 20em;
@@ -70,59 +69,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	.d_button:hover {
 	  box-shadow: inset 0px 0px 25px #adcee0;
 	}
-}
-@media screen and (min-width: 600px) {
-	.DLbuttun {
-		width:50%;
-		display:table;
-	}
-	.d_button {
-	  width: 20em;
-	  position: relative;
-	  height: 3.5em;
-	  border: 3px ridge #adcee0;
-	  outline: none;
-	  background-color: transparent;
-	  color: white;
-	  transition: 1s;
-	  border-radius: 0.3em;
-	  font-size: 16px;
-	  font-weight: bold;
-	  cursor: pointer;
-	}
-	
-	.d_button::after {
-	  content: "";
-	  position: absolute;
-	  top: -10px;
-	  left: 3%;
-	  width: 95%;
-	  height: 40%;
-	  background-color: #000000;
-	  transition: 0.5s;
-	  transform-origin: center;
-	}
-	
-	.d_button::before {
-	  content: "";
-	  transform-origin: center;
-	  position: absolute;
-	  top: 80%;
-	  left: 3%;
-	  width: 95%;
-	  height: 40%;
-	  background-color: #000000;
-	  transition: 0.5s;
-	}
-	
-	.d_button:hover::before, .d_button:hover::after {
-	  transform: scale(0)
-	}
-	
-	.d_button:hover {
-	  box-shadow: inset 0px 0px 25px #adcee0;
-	}
-}
 
 .links {
   color: inherit;
