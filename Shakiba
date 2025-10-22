@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>armansoltani</title>
+<link rel="icon" type="image/x-icon" href="tattoo-r-e.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="JYGUjDXirtRHjT8ddNB2Ey3xAT3e1QcO-ad1OT19aW8" />
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+	.w3-row-padding img {margin-bottom: 12px}
+	/* Set the width of the sidebar to 120px */
+	.w3-sidebar {width: 120px;background: #222;}
+	/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+	#main {margin-left: 120px}
+	/* Remove margins from "page " on small screens */
+	@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+		/* From Uiverse.io by Navarog21 */ 
+	
+		.d_button {
+		  width: 20em;
+		  position: relative;
+		  height: 3.5em;
+		  border: 3px ridge #adcee0;
+		  outline: none;
+		  background-color: transparent;
+		  color: white;
+		  transition: 1s;
+		  border-radius: 0.3em;
+		  font-size: 16px;
+		  font-weight: bold;
+		  cursor: pointer;
+		  margin:15px;
+		}
+		
+		.d_button::after {
+		  content: "";
+		  position: absolute;
+		  top: -10px;
+		  left: 3%;
+		  width: 95%;
+		  height: 40%;
+		  background-color: #000000;
+		  transition: 0.5s;
+		  transform-origin: center;
+		}
+		
+		.d_button::before {
+		  content: "";
+		  transform-origin: center;
+		  position: absolute;
+		  top: 80%;
+		  left: 3%;
+		  width: 95%;
+		  height: 40%;
+		  background-color: #000000;
+		  transition: 0.5s;
+		}
+		
+		.d_button:hover::before, .d_button:hover::after {
+		  transform: scale(0)
+		}
+		
+		.d_button:hover {
+		  box-shadow: inset 0px 0px 25px #adcee0;
+		}
+	
+	.links {
+	  color: inherit;
+	  text-decoration: none;
+	  background:
+	    linear-gradient(
+	      to right,
+	      rgba(255, 255, 255, 1),
+	      rgba(255, 255, 255, 1),
+	      rgba(255, 255, 255, 1)
+	  ),
+	    linear-gradient(
+	      to right,
+	      rgba(255, 0, 0, 1),
+	      rgba(255, 0, 180, 1),
+	      rgba(0, 100, 200, 1)
+	  );
+	  background-size: 100% 1px, 0 1px;
+	  background-position: 100% 100%, 0 100%;
+	  background-repeat: no-repeat;
+	  transition: background-size 400ms;
+	}
+	
+	.links:hover {
+	  background-size: 0 1px, 100% 1px;
+	}
+	
+	@media screen and (min-width: 600px) {
+		 .typewriter-small h5 {
+			 visibility: hidden;
+		 }
+		  .typewriter h5 {
+		  overflow: hidden; /* Ensures the content is not revealed until the animation */
+		  border-right: .15em solid white; /* The typwriter cursor */
+		  white-space: nowrap; /* Keeps the content on a single line */
+		  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+		  letter-spacing: .01em; /* Adjust as needed */
+		  text-align: center;
+		  animation: 
+		    typing 3.5s steps(30, end),
+		    blink-caret .75s step-end infinite;
+		  }
+		
+		/* The typing effect */
+		@keyframes typing {
+		  from { width: 0 }
+	  	  to { width: 100% }
+		}
+		
+		/* The typewriter cursor effect */
+		@keyframes blink-caret {
+		  from, to { border-color: transparent }
+	  	  50% { border-color: white }
+		}
+	}
+	@media screen and (max-width: 601px) {
+		.typewriter h5 {
+			visibility: hidden;
+		 }
+		  .typewriter-small h5 {
+		  overflow: hidden; /* Ensures the content is not revealed until the animation */
+		  border-right: .15em solid white; /* The typwriter cursor */
+		  white-space: nowrap; /* Keeps the content on a single line */
+		  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+		  letter-spacing: .01em; /* Adjust as needed */
+		  text-align: center;
+		  animation: 
+		    typing 3.5s steps(40, end),
+	    	    blink-caret .75s step-end infinite;
+		  }
+		
+		/* The typing effect */
+		@keyframes typing {
+		  from { width: 0% }
+		  to { width: 100% }
+		}
+		
+		/* The typewriter cursor effect */
+		@keyframes blink-caret {
+		  from, to { border-color: transparent }
+		  50% { border-color: white; }
+		}
+	}
+</style>
+</head>
+<body class="w3-black">
+	
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+	<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+	  <!-- Avatar image in top left corner -->
+	<!--   <img src="tattoo-r-e.jpg" style="width:100%" height="100px"> -->
+	  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+	    <i class="fa fa-home w3-xxlarge"></i>
+	    <p>HOME</p>
+	  </a>
+	  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+	    <i class="fa fa-user w3-xxlarge"></i>
+	    <p>ABOUT</p>
+	  </a>
+	  <a href="#resume" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+	    <i class="fa fa-check-circle w3-xxlarge"></i>
+	    <p>RESUME</p>
+	  </a>
+	  <a href="#download" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+	    <i class="fa fa-cloud w3-xxlarge"></i>
+	    <p>CONTENT</p>
+	  </a>
+	  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+	    <i class="fa fa-envelope w3-xxlarge"></i>
+	    <p>CONTACT</p>
+	  </a>
+	</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+	<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+	  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+	    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+	    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+	    <a href="#resume" class="w3-bar-item w3-button" style="width:25% !important">RESUME</a>
+	    <a href="#download" class="w3-bar-item w3-button" style="width:25% !important">DOWNLOAD</a>
+	    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+	  </div>
+	</div>
+	
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+<!-- Header/Home -->
+	  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+		<h1 class="w3-jumbo">Arman Soltani</h1>
+	  </header>
+	  <div class="typewriter">
+	  	<h5>Be the change you wish to see in the world.</h5>
+	  </div>
+	  <div class="typewriter-small">
+	  	<h5>Be the change</h5>
+		<h5>you wish to see</h5>
+		<h5>in the world.</h5>
+	  </div>
+<!-- End Header/Home -->
+<!-- About Section -->
+	  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+<!-- My Bio Section -->
+	    <h2 class="w3-text-light-grey">My Bio</h2>
+		    <hr style="width:200px" class="w3-opacity">
+		    <p> 
+			    26th January 1996
+			</p>
+			<p>
+			    BCA in electrical engineering
+			</p>
+			<p>
+			    Computer programmer & Web developer
+			</p>
+			<p>
+			    Data Scientist & Data Analyst
+			</p>
+			<p>
+			    Referee , Coach & Athlete
+		    </p>
+			<br>
+<!-- End My Bio Section -->
+
+<!-- My Skills Section -->
+	    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+			<hr style="width:200px" class="w3-opacity">
+		    <p class="w3-wide">Programming</p>
+		    <div class="w3-white">
+		      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+		    </div>
+		    <p class="w3-wide">Engineering Software</p>
+		    <div class="w3-white">
+		      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+		    </div>
+		    <p class="w3-wide">Teaching</p>
+		    <div class="w3-white">
+		      <div class="w3-dark-grey" style="height:28px;width:50%"></div>
+		    </div>
+		    <p class="w3-wide">Data Engineering</p>
+		    <div class="w3-white">
+		      <div class="w3-dark-grey" style="height:28px;width:65%"></div>
+		    </div>
+		    <p class="w3-wide">Web Design</p>
+		    <div class="w3-white">
+		      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+		    </div>
+			<br>
+<!-- End My Skills Section -->
+
+<!-- Grid/Pricing tables -->
+	<!--     <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+	      <div class="w3-quarter w3-section">
+	        <span class="w3-xlarge">12+</span><br>
+	        Teaching assistant experiences
+	      </div>
+	      <div class="w3-quarter w3-section">
+	        <span class="w3-xlarge">55+</span><br>
+	        Projects Done
+	      </div>
+	      <div class="w3-quarter w3-section">
+	        <span class="w3-xlarge">36+</span><br>
+	        Researches
+	      </div>
+	      <div class="w3-quarter w3-section">
+	        <span class="w3-xlarge">350+</span><br>
+	        Students
+	      </div>
+	    </div> -->
+	    <!--     </div> -->
+<!-- End Grid/Pricing tables -->
+	
+	  </div>
+<!-- End About Section -->
+  
+<!-- Portfolio Section -->
+	  <div class="w3-padding-64 w3-content" id="resume">
+	    <h2 class="w3-text-light-grey">My Resume</h2>
+	    <hr style="width:200px" class="w3-opacity">
+		<h4>Education</h4>
+	    <div id="education" class="w3-justify w3-text-grey">
+	        <span>Shiraz University, Shiraz ,Iran</span><br>
+	        <span>Shahid Dastgheib 2 High School, Shiraz, Iran</span><br>
+	    </div>
+		<h4>Work</h4>
+	    <div id="education" class="w3-justify w3-text-grey">
+	        <span>Chief Technology Officer, <a class="links" href="https://decopart.ir/" target="_blank">Decopart Group</a>, Shiraz, Iran</span><br>
+			<span>Chief Executive Officer, <a class="links" href="https://fancybeauty.ir/" target="_blank">Fancy Beauty</a>, Shiraz, Iran</span><br>
+	        <span>Data Scientist, Adina Beauty Clinic Center, Shiraz, Iran</span><br>
+		<span>Web developer, <a class="links" href="https://mokolock.com/" target="_blank"> Mokolock</a> , Shiraz, Iran</span><br>
+		<span>Web developer, <a class="links" href="https://mokosmart.ir/" target="_blank">Mokosmart</a> , Shiraz, Iran</span><br>    
+	        <span>Web developer, <a class="links" href="https://radanwin.ir/" target="_blank"> Radan Window</a> , Shiraz, Iran</span><br>
+		<span>Web developer, <a class="links" href="https://estehkam.co.com/" target="_blank"> Estehkam Sazan</a> , Shiraz, Iran</span><br>
+	    </div>
+	    <h4>Activities and Honors</h4>
+	    <div id="activities and honors" class="w3-justify w3-text-grey">
+		<span><a style="text-decoration: none;" href="IEEE_membership_Certification_Arman_Soltani.jpg" target="_blank">Member of the IEEE student branch of Shiraz University</a></span><br>
+		<span>Member of the scientific association of Shiraz University</span><br>
+		<span>Surgical room engineer Assistant at Namazi Hospital</span><br>
+		<span>Instructor of engineering softwares</span><br>
+		<span>Teacher Assistant of engineering courses and laboratories</span><br>
+		<span><a style="text-decoration: none;" href="https://www.udemy.com/certificate/UC-5ZIXCLGM/" target="_blank">Complete Python beginner to advance course</a></span><br>
+		<span><a style="text-decoration: none;" href="https://coursera.org/share/768e6d184216205c8d2b2932f0c5ef77" target="_blank">Complete Machine Learning course</a></span><br>
+		<span>Member of faculty of engineering football team</span><br>
+		<span><a style="text-decoration: none;" href="Physical_Fitness_Certification_Arman_Soltani.jpg" target="_blank">Physical Fitness Coaching license</a></span><br>
+		<span>Attending CrossFit and functional training workshop</span><br>
+		<span><a style="text-decoration: none;" href="Robocup_2010_Certificate_of_Participation_Arman_Soltani.jpg" target="_blank">Participation in RoboCup Iran Open 2010</a></span><br>
+		<span><a style="text-decoration: none;" href="C#_Certification_Arman_Soltani.pdf" target="_blank">C# Programing language license</a></span><br>
+		<span><a style="text-decoration: none;" href="DHTML_Certification_Arman_Soltani.pdf" target="_blank">DHTML Web designing language license</a></span><br>
+		<span><a style="text-decoration: none;" href="UNIX_Certification_Arman_Soltani.pdf" target="_blank">UNIX user license</a></span><br>
+	    </div>
+	  </div>
+<!-- End Portfolio Section -->
+
+<!-- Download Section -->
+	  <div class="w3-padding-64 w3-content w3-text-grey" id="download">
+	    <h2 class="w3-text-light-grey">Content</h2>
+	    <hr style="width:200px" class="w3-opacity"> 
+	        <div class="DLbutton">
+			<button class="d_button" name="Download CV"><a href="Arman Soltani - CV.pdf" style="text-decoration:none" target="_blank">Download my CV</a></button>
+			<button class="d_button" name="Python introduction"><a href="https://www.py4e.com/lessons" target="_blank" style="text-decoration:none">Python introduction</a></button>
+	        	<button class="d_button" name="Cryptocurrencies introduction"><a href="crypto by Arman.pdf" target="_blank" style="text-decoration:none">Cryptocurrencies introduction</a></button>
+			<button class="d_button" name="Trading Courses"><a href="https://kohanfx.com/category/learning/" target="_blank" style="text-decoration:none">Trading Courses</a></button>
+	<!-- 		<button class="d_button" name="SixpackMiner introduction"><a href="Sixpackminer Starter by Arman.pdf" style="text-decoration:none">SixpackMiner introduction</a></button> -->
+	<!-- 		<button class="d_button" name="SixpackMiner Node"><a href="Sixpackminer Node by Arman.pdf" style="text-decoration:none">SixpackMiner Node</a></button> -->
+	<!-- 		<button class="d_button" name="SixpackMiner NFT"><a href="Sixpackminer NFT by Arman.pdf" style="text-decoration:none">SixpackMiner NFT</a></button> -->
+	<!-- 		<button class="d_button" name="Music for You"><a href="Dido - Day Before We Went To War (VM™️).mp3" style="text-decoration:none">Music for You</a></button> -->
+			</div> 
+	  </div>
+<!-- End Download Section -->
+
+<!-- Contact Section -->
+	  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+	    <h2 class="w3-text-light-grey">Contact Me</h2>
+	    <hr style="width:200px" class="w3-opacity">
+	
+	    <div class="w3-section">
+	      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> +989176339195</p>
+	      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> arman.soltani.as@gmail.com</p>
+	    </div><br>
+	  </div>
+<!-- End Contact Section -->
+  
+<!-- Footer -->
+	  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+	    <a href="mailto:arman.soltani@yahoo.com"><i class="fa fa-envelope-o" w3-hover-opacity aria-hidden="true"></i></a>
+	    <a href="https://wa.me/+989176339195"><i class="fa fa-whatsapp w3-hover-opacity"></i></a>
+	    <a href="https://www.instagram.com/arman_sltn"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+	    <a href="https://telegram.me/soltani_arman"><i class="fa fa-telegram w3-hover-opacity"></i></a>
+	    <a href="https://www.facebook.com/arman.soltani.564"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+	    <a href="https://twitter.com/armansoltani11"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+	    <a href="https://www.linkedin.com/in/arman-soltani"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+	  </footer>
+<!-- End footer -->
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
