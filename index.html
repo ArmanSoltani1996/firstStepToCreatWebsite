@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem("site-lang")||((navigator.language||"").slice(0,2)==="fa"?"fa":"en");if(l==="fa"){document.documentElement.classList.add("lang-fa");document.documentElement.setAttribute("lang","fa");document.documentElement.setAttribute("dir","rtl");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arman Soltani (آرمان سلطانی) — Electrical Engineer, Web Developer &amp; IT Specialist</title>
 <meta name="description" content="Arman Soltani (آرمان سلطانی) is an electrical engineer, web developer, IT specialist and data analyst based in Shiraz, Iran — and founder or CTO of six companies spanning furniture, cosmetics, smart hardware and construction.">
@@ -29,12 +30,8 @@
 <link rel="icon" type="image/x-icon" href="media/tattoo-r-e.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet" href="css/fonts.css" />
-<!-- or use fonts.min.css -->
-<link rel="stylesheet" href="css/fonts.min.css" />
 
 <script type="application/ld+json">
 {
@@ -135,11 +132,17 @@
 
 <!-- Mobile slide-down menu -->
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-  <a href="#home" data-target="home"><span class="mm-idx">00</span>Home</a>
-  <a href="#about" data-target="about"><span class="mm-idx">01</span>About</a>
-  <a href="#resume" data-target="resume"><span class="mm-idx">02</span>Resume</a>
-  <a href="#download" data-target="download"><span class="mm-idx">03</span>Content</a>
-  <a href="#contact" data-target="contact"><span class="mm-idx">04</span>Contact</a>
+  <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile" type="button" aria-label="Switch language / تغییر زبان">
+    <span class="mm-idx">--</span>
+    <span class="lang-toggle__opt" data-lang="en">EN — English</span>
+    <span class="lang-toggle__sep">/</span>
+    <span class="lang-toggle__opt" data-lang="fa">FA — فارسی</span>
+  </button>
+  <a href="#home" data-target="home"><span class="mm-idx">00</span><span class="i18n-en">Home</span><span class="i18n-fa" lang="fa">خانه</span></a>
+  <a href="#about" data-target="about"><span class="mm-idx">01</span><span class="i18n-en">About</span><span class="i18n-fa" lang="fa">درباره</span></a>
+  <a href="#resume" data-target="resume"><span class="mm-idx">02</span><span class="i18n-en">Resume</span><span class="i18n-fa" lang="fa">رزومه</span></a>
+  <a href="#download" data-target="download"><span class="mm-idx">03</span><span class="i18n-en">Content</span><span class="i18n-fa" lang="fa">محتوا</span></a>
+  <a href="#contact" data-target="contact"><span class="mm-idx">04</span><span class="i18n-en">Contact</span><span class="i18n-fa" lang="fa">تماس</span></a>
 </nav>
 
 <!-- Desktop circuit-trace side nav -->
@@ -149,24 +152,30 @@
   </div>
   <a href="#home" class="trace-node" data-target="home" aria-label="Home">
     <span class="trace-node__dot"></span>
-    <span class="trace-node__label"><em>00</em>Home</span>
+    <span class="trace-node__label"><em>00</em><span class="i18n-en">Home</span><span class="i18n-fa" lang="fa">خانه</span></span>
   </a>
   <a href="#about" class="trace-node" data-target="about" aria-label="About">
     <span class="trace-node__dot"></span>
-    <span class="trace-node__label"><em>01</em>About</span>
+    <span class="trace-node__label"><em>01</em><span class="i18n-en">About</span><span class="i18n-fa" lang="fa">درباره</span></span>
   </a>
   <a href="#resume" class="trace-node" data-target="resume" aria-label="Resume">
     <span class="trace-node__dot"></span>
-    <span class="trace-node__label"><em>02</em>Resume</span>
+    <span class="trace-node__label"><em>02</em><span class="i18n-en">Resume</span><span class="i18n-fa" lang="fa">رزومه</span></span>
   </a>
   <a href="#download" class="trace-node" data-target="download" aria-label="Content">
     <span class="trace-node__dot"></span>
-    <span class="trace-node__label"><em>03</em>Content</span>
+    <span class="trace-node__label"><em>03</em><span class="i18n-en">Content</span><span class="i18n-fa" lang="fa">محتوا</span></span>
   </a>
   <a href="#contact" class="trace-node" data-target="contact" aria-label="Contact">
     <span class="trace-node__dot"></span>
-    <span class="trace-node__label"><em>04</em>Contact</span>
+    <span class="trace-node__label"><em>04</em><span class="i18n-en">Contact</span><span class="i18n-fa" lang="fa">تماس</span></span>
   </a>
+
+  <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language / تغییر زبان">
+    <span class="lang-toggle__opt" data-lang="en">EN</span>
+    <span class="lang-toggle__sep">/</span>
+    <span class="lang-toggle__opt" data-lang="fa">FA</span>
+  </button>
 </nav>
 
 <main id="main">
@@ -175,7 +184,7 @@
   <header class="hero" id="home">
     <div class="hero__grid" data-speed="0.15" aria-hidden="true"></div>
     <div class="hero__inner">
-      <p class="eyebrow">SCHEMATIC — PERSONAL DOSSIER</p>
+      <p class="eyebrow"><span class="i18n-en">SCHEMATIC — PERSONAL DOSSIER</span><span class="i18n-fa" lang="fa">شرح مدار — پرونده شخصی</span></p>
 
       <div class="chip-wrap">
         <svg class="chip-outline" viewBox="0 0 640 240" aria-hidden="true">
@@ -208,20 +217,20 @@
       </div>
 
       <p class="hero__typewriter">
-        <span class="tw-prefix">compiles&nbsp;</span><span id="twText" class="tw-text"></span><span class="tw-cursor" aria-hidden="true"></span>
+        <span class="tw-prefix i18n-en">compiles&nbsp;</span><span class="tw-prefix i18n-fa" lang="fa">می‌سازد&nbsp;</span><span id="twText" class="tw-text"></span><span class="tw-cursor" aria-hidden="true"></span>
       </p>
 
-      <p class="hero__quote">"Be the change you wish to see in the world."</p>
+      <p class="hero__quote"><span class="i18n-en">"Be the change you wish to see in the world."</span><span class="i18n-fa" lang="fa">"همان تغییری باش که می‌خواهی در جهان ببینی."</span></p>
 
       <div class="hero__cta">
         <a class="btn btn--primary" href="document/Arman%20Soltani%20-%20CV.pdf" target="_blank" rel="noopener">
-          <span>Download CV</span>
+          <span class="i18n-en">Download CV</span><span class="i18n-fa" lang="fa">دانلود رزومه</span>
         </a>
         <a class="btn btn--ghost" href="#resume">
-          <span>View ventures</span>
+          <span class="i18n-en">View ventures</span><span class="i18n-fa" lang="fa">مشاهده شرکت‌ها</span>
         </a>
         <a class="btn btn--ghost" href="#contact">
-          <span>Get in touch</span>
+          <span class="i18n-en">Get in touch</span><span class="i18n-fa" lang="fa">تماس با من</span>
         </a>
       </div>
     </div>
@@ -230,45 +239,45 @@
   <!-- ============ ABOUT ============ -->
   <section class="section" id="about" aria-labelledby="about-h">
     <div class="section__inner">
-      <p class="section__eyebrow reveal">01 / DATASHEET</p>
-      <h2 id="about-h" class="section__title reveal">About</h2>
+      <p class="section__eyebrow reveal"><span class="i18n-en">01 / DATASHEET</span><span class="i18n-fa" lang="fa">۰۱ / برگه مشخصات</span></p>
+      <h2 id="about-h" class="section__title reveal"><span class="i18n-en">About</span><span class="i18n-fa" lang="fa">درباره من</span></h2>
 
       <div class="datasheet">
         <dl class="spec-list">
-          <div class="spec-row"><dt>Born</dt><dd>26 January 1996</dd></div>
-          <div class="spec-row"><dt>Education</dt><dd>BCA, Electrical Engineering</dd></div>
-          <div class="spec-row"><dt>Roles</dt><dd>Web Developer &amp; Data Analyst</dd></div>
-          <div class="spec-row"><dt>Base</dt><dd>Shiraz, Iran</dd></div>
-          <div class="spec-row"><dt>Ventures</dt><dd>6 companies — CTO / CEO</dd></div>
+          <div class="spec-row"><dt><span class="i18n-en">Born</span><span class="i18n-fa" lang="fa">تاریخ تولد</span></dt><dd><span class="i18n-en">26 January 1996</span><span class="i18n-fa" lang="fa">۲۶ ژانویه ۱۹۹۶</span></dd></div>
+          <div class="spec-row"><dt><span class="i18n-en">Education</span><span class="i18n-fa" lang="fa">تحصیلات</span></dt><dd><span class="i18n-en">BCA, Electrical Engineering</span><span class="i18n-fa" lang="fa">کارشناسی مهندسی برق</span></dd></div>
+          <div class="spec-row"><dt><span class="i18n-en">Roles</span><span class="i18n-fa" lang="fa">نقش‌ها</span></dt><dd><span class="i18n-en">Web Developer &amp; Data Analyst</span><span class="i18n-fa" lang="fa">توسعه‌دهنده وب و تحلیل‌گر داده</span></dd></div>
+          <div class="spec-row"><dt><span class="i18n-en">Base</span><span class="i18n-fa" lang="fa">محل سکونت</span></dt><dd><span class="i18n-en">Shiraz, Iran</span><span class="i18n-fa" lang="fa">شیراز، ایران</span></dd></div>
+          <div class="spec-row"><dt><span class="i18n-en">Ventures</span><span class="i18n-fa" lang="fa">کسب‌وکارها</span></dt><dd><span class="i18n-en">6 companies — CTO / CEO</span><span class="i18n-fa" lang="fa">۶ شرکت — مدیر فنی / مدیرعامل</span></dd></div>
         </dl>
 
         <div class="meters" role="list" aria-label="Skill levels">
           <div class="meter" role="listitem" style="--v:75%">
-            <div class="meter__head"><span>Programming</span><span class="meter__value">75%</span></div>
+            <div class="meter__head"><span class="i18n-en">Programming</span><span class="i18n-fa" lang="fa">برنامه‌نویسی</span><span class="meter__value">75%</span></div>
             <div class="meter__track"><div class="meter__fill"></div></div>
           </div>
           <div class="meter" role="listitem" style="--v:85%">
-            <div class="meter__head"><span>Engineering Software</span><span class="meter__value">85%</span></div>
+            <div class="meter__head"><span class="i18n-en">Engineering Software</span><span class="i18n-fa" lang="fa">نرم‌افزارهای مهندسی</span><span class="meter__value">85%</span></div>
             <div class="meter__track"><div class="meter__fill"></div></div>
           </div>
           <div class="meter" role="listitem" style="--v:65%">
-            <div class="meter__head"><span>Data Analysis</span><span class="meter__value">65%</span></div>
+            <div class="meter__head"><span class="i18n-en">Data Analysis</span><span class="i18n-fa" lang="fa">تحلیل داده</span><span class="meter__value">65%</span></div>
             <div class="meter__track"><div class="meter__fill"></div></div>
           </div>
           <div class="meter" role="listitem" style="--v:85%">
-            <div class="meter__head"><span>Web Development</span><span class="meter__value">85%</span></div>
+            <div class="meter__head"><span class="i18n-en">Web Development</span><span class="i18n-fa" lang="fa">توسعه وب</span><span class="meter__value">85%</span></div>
             <div class="meter__track"><div class="meter__fill"></div></div>
           </div>
         </div>
       </div>
 
-      <h3 class="subhead reveal">Quick Facts</h3>
+      <h3 class="subhead reveal"><span class="i18n-en">Quick Facts</span><span class="i18n-fa" lang="fa">نکات کلیدی</span></h3>
       <div class="terminal reveal">
         <div class="terminal__bar"><span></span><span></span><span></span></div>
         <div class="terminal__body">
-          <p><span class="t-prompt">Q</span> Who is Arman Soltani? <span class="t-arrow">→</span> Electrical engineer, web developer, IT specialist &amp; data analyst.</p>
-          <p><span class="t-prompt">Q</span> Based in <span class="t-arrow">→</span> Shiraz, Iran.</p>
-          <p><span class="t-prompt">Q</span> Companies led <span class="t-arrow">→</span> <span class="t-ok">6</span> — Decopart, Fancy Beauty, Mokosmart, Mokolock, Radan Window, Estehkam Sazan.</p>
+          <p><span class="t-prompt">Q</span> <span class="i18n-en">Who is Arman Soltani?</span><span class="i18n-fa" lang="fa">آرمان سلطانی کیست؟</span> <span class="t-arrow">→</span> <span class="i18n-en">Electrical engineer, web developer, IT specialist &amp; data analyst.</span><span class="i18n-fa" lang="fa">مهندس برق، توسعه‌دهنده وب، متخصص فناوری اطلاعات و تحلیل‌گر داده.</span></p>
+          <p><span class="t-prompt">Q</span> <span class="i18n-en">Based in</span><span class="i18n-fa" lang="fa">محل زندگی</span> <span class="t-arrow">→</span> <span class="i18n-en">Shiraz, Iran.</span><span class="i18n-fa" lang="fa">شیراز، ایران.</span></p>
+          <p><span class="t-prompt">Q</span> <span class="i18n-en">Companies led</span><span class="i18n-fa" lang="fa">شرکت‌های تحت مدیریت</span> <span class="t-arrow">→</span> <span class="t-ok">6</span> — Decopart, Fancy Beauty, Mokosmart, Mokolock, Radan Window, Estehkam Sazan.</p>
         </div>
       </div>
     </div>
@@ -277,17 +286,17 @@
   <!-- ============ RESUME ============ -->
   <section class="section" id="resume" aria-labelledby="resume-h">
     <div class="section__inner">
-      <p class="section__eyebrow reveal">02 / BOARD LAYOUT</p>
-      <h2 id="resume-h" class="section__title reveal">Resume</h2>
+      <p class="section__eyebrow reveal"><span class="i18n-en">02 / BOARD LAYOUT</span><span class="i18n-fa" lang="fa">۰۲ / نقشه برد</span></p>
+      <h2 id="resume-h" class="section__title reveal"><span class="i18n-en">Resume</span><span class="i18n-fa" lang="fa">رزومه</span></h2>
 
-      <h3 class="subhead">Education</h3>
+      <h3 class="subhead"><span class="i18n-en">Education</span><span class="i18n-fa" lang="fa">تحصیلات</span></h3>
       <ul class="edu-list">
-        <li><span class="edu-tag">DEGREE</span>Shiraz University, Shiraz, Iran</li>
-        <li><span class="edu-tag">SCHOOL</span>Shahid Dastgheib 2 High School, Shiraz, Iran</li>
+        <li><span class="edu-tag"><span class="i18n-en">DEGREE</span><span class="i18n-fa" lang="fa">مدرک</span></span><span class="i18n-en">Shiraz University, Shiraz, Iran</span><span class="i18n-fa" lang="fa">دانشگاه شیراز، شیراز، ایران</span></li>
+        <li><span class="edu-tag"><span class="i18n-en">SCHOOL</span><span class="i18n-fa" lang="fa">دبیرستان</span></span><span class="i18n-en">Shahid Dastgheib 2 High School, Shiraz, Iran</span><span class="i18n-fa" lang="fa">دبیرستان شهید دستغیب ۲، شیراز، ایران</span></li>
       </ul>
 
-      <h3 class="subhead">Work — Peripheral ICs</h3>
-      <p class="board-note">Six companies wired to the same board. Each card is a component, labelled with its designator and role.</p>
+      <h3 class="subhead"><span class="i18n-en">Work — Peripheral ICs</span><span class="i18n-fa" lang="fa">سوابق کاری — مدارهای جانبی</span></h3>
+      <p class="board-note"><span class="i18n-en">Six companies wired to the same board. Each card is a component, labelled with its designator and role.</span><span class="i18n-fa" lang="fa">شش شرکت که به یک برد متصل شده‌اند. هر کارت یک قطعه است که با کد شناسایی و سمت مشخص شده.</span></p>
 
       <div class="ic-grid">
 
@@ -295,7 +304,7 @@
           <span class="ic-card__designator">U1</span>
           <div class="ic-card__logo"><img src="media/Logo Decopart.png" alt="Decopart Group logo" loading="lazy"></div>
           <h4 class="ic-card__name">Decopart Group</h4>
-          <p class="ic-card__role">Chief Technology Officer</p>
+          <p class="ic-card__role"><span class="i18n-en">Chief Technology Officer</span><span class="i18n-fa" lang="fa">مدیر ارشد فناوری</span></p>
           <div class="ic-card__links">
             <a href="https://decopart.ir/" target="_blank" rel="noopener" aria-label="Decopart Group website"><svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></a>
             <a href="https://www.instagram.com/decopart.furniture" target="_blank" rel="noopener" aria-label="Decopart Group on Instagram"><svg viewBox="0 0 24 24" class="ic"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
@@ -306,7 +315,7 @@
           <span class="ic-card__designator">U2</span>
           <div class="ic-card__logo"><img src="media/Logo FancyBeauty.PNG" alt="Fancy Beauty logo" loading="lazy"></div>
           <h4 class="ic-card__name">Fancy Beauty</h4>
-          <p class="ic-card__role">Chief Executive Officer</p>
+          <p class="ic-card__role"><span class="i18n-en">Chief Executive Officer</span><span class="i18n-fa" lang="fa">مدیرعامل</span></p>
           <div class="ic-card__links">
             <a href="https://fancybeauty.ir/" target="_blank" rel="noopener" aria-label="Fancy Beauty website"><svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></a>
             <a href="https://www.instagram.com/fancy.beauty.ir" target="_blank" rel="noopener" aria-label="Fancy Beauty on Instagram"><svg viewBox="0 0 24 24" class="ic"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
@@ -317,7 +326,7 @@
           <span class="ic-card__designator">U3</span>
           <div class="ic-card__logo"><img src="media/Logo Mokosmart.png" alt="Mokosmart logo" loading="lazy"></div>
           <h4 class="ic-card__name">Mokosmart</h4>
-          <p class="ic-card__role">Chief Executive Officer</p>
+          <p class="ic-card__role"><span class="i18n-en">Chief Executive Officer</span><span class="i18n-fa" lang="fa">مدیرعامل</span></p>
           <div class="ic-card__links">
             <a href="https://mokosmart.ir/" target="_blank" rel="noopener" aria-label="Mokosmart website"><svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></a>
             <a href="https://armansoltani.ir/" target="_blank" rel="noopener" aria-label="Mokosmart on Instagram"><svg viewBox="0 0 24 24" class="ic"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
@@ -328,7 +337,7 @@
           <span class="ic-card__designator">U4</span>
           <div class="ic-card__logo"><img src="media/Logo Mokolock.png" alt="Mokolock logo" loading="lazy"></div>
           <h4 class="ic-card__name">Mokolock</h4>
-          <p class="ic-card__role">Chief Executive Officer</p>
+          <p class="ic-card__role"><span class="i18n-en">Chief Executive Officer</span><span class="i18n-fa" lang="fa">مدیرعامل</span></p>
           <div class="ic-card__links">
             <a href="https://mokolock.com/" target="_blank" rel="noopener" aria-label="Mokolock website"><svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></a>
             <a href="https://armansoltani.ir/" target="_blank" rel="noopener" aria-label="Mokolock on Instagram"><svg viewBox="0 0 24 24" class="ic"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
@@ -339,7 +348,7 @@
           <span class="ic-card__designator">U5</span>
           <div class="ic-card__logo"><img src="media/Logo RadanWin.png" alt="Radan Window logo" loading="lazy"></div>
           <h4 class="ic-card__name">Radan Window</h4>
-          <p class="ic-card__role">Chief Executive Officer</p>
+          <p class="ic-card__role"><span class="i18n-en">Chief Executive Officer</span><span class="i18n-fa" lang="fa">مدیرعامل</span></p>
           <div class="ic-card__links">
             <a href="https://radanwin.ir/" target="_blank" rel="noopener" aria-label="Radan Window website"><svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></a>
             <a href="https://www.instagram.com/radanwin.co" target="_blank" rel="noopener" aria-label="Radan Window on Instagram"><svg viewBox="0 0 24 24" class="ic"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
@@ -350,7 +359,7 @@
           <span class="ic-card__designator">U6</span>
           <div class="ic-card__logo"><img src="media/Logo Estehkam.png" alt="Estehkam Sazan logo" loading="lazy"></div>
           <h4 class="ic-card__name">Estehkam Sazan</h4>
-          <p class="ic-card__role">Chief Executive Officer</p>
+          <p class="ic-card__role"><span class="i18n-en">Chief Executive Officer</span><span class="i18n-fa" lang="fa">مدیرعامل</span></p>
           <div class="ic-card__links">
             <a href="https://estehkam.co.com/" target="_blank" rel="noopener" aria-label="Estehkam Sazan website"><svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></a>
             <a href="https://www.instagram.com/estehkamsazan.co" target="_blank" rel="noopener" aria-label="Estehkam Sazan on Instagram"><svg viewBox="0 0 24 24" class="ic"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
@@ -359,22 +368,22 @@
 
       </div>
 
-      <h3 class="subhead">Activities &amp; Honors</h3>
+      <h3 class="subhead"><span class="i18n-en">Activities &amp; Honors</span><span class="i18n-fa" lang="fa">فعالیت‌ها و افتخارات</span></h3>
       <ul class="honors-list">
-        <li><a href="document/IEEE_membership_Certification_Arman_Soltani.jpg" target="_blank" rel="noopener">Member of the IEEE student branch of Shiraz University</a></li>
-        <li>Member of the scientific association of Shiraz University</li>
-        <li>Surgical room engineer assistant at Namazi Hospital</li>
-        <li>Instructor of engineering software</li>
-        <li>Teacher assistant for engineering courses and laboratories</li>
-        <li><a href="https://www.udemy.com/certificate/UC-5ZIXCLGM/" target="_blank" rel="noopener">Complete Python: beginner to advanced course</a></li>
-        <li><a href="https://coursera.org/share/768e6d184216205c8d2b2932f0c5ef77" target="_blank" rel="noopener">Complete Machine Learning course</a></li>
-        <li>Member of the faculty of engineering football team</li>
-        <li><a href="document/Physical_Fitness_Certification_Arman_Soltani.jpg" target="_blank" rel="noopener">Physical Fitness Coaching license</a></li>
-        <li>CrossFit and functional training workshop</li>
-        <li><a href="document/Robocup_2010_Certificate_of_Participation_Arman_Soltani.jpg" target="_blank" rel="noopener">Participation in RoboCup Iran Open 2010</a></li>
-        <li><a href="document/C%23_Certification_Arman_Soltani.pdf" target="_blank" rel="noopener">C# programming language license</a></li>
-        <li><a href="document/DHTML_Certification_Arman_Soltani.pdf" target="_blank" rel="noopener">DHTML web design language license</a></li>
-        <li><a href="document/UNIX_Certification_Arman_Soltani.pdf" target="_blank" rel="noopener">UNIX user license</a></li>
+        <li><a href="document/IEEE_membership_Certification_Arman_Soltani.jpg" target="_blank" rel="noopener"><span class="i18n-en">Member of the IEEE student branch of Shiraz University</span><span class="i18n-fa" lang="fa">عضو شاخه دانشجویی IEEE دانشگاه شیراز</span></a></li>
+        <li><span class="i18n-en">Member of the scientific association of Shiraz University</span><span class="i18n-fa" lang="fa">عضو انجمن علمی دانشگاه شیراز</span></li>
+        <li><span class="i18n-en">Surgical room engineer assistant at Namazi Hospital</span><span class="i18n-fa" lang="fa">دستیار مهندس اتاق عمل در بیمارستان نمازی</span></li>
+        <li><span class="i18n-en">Instructor of engineering software</span><span class="i18n-fa" lang="fa">مدرس نرم‌افزارهای مهندسی</span></li>
+        <li><span class="i18n-en">Teacher assistant for engineering courses and laboratories</span><span class="i18n-fa" lang="fa">دستیار آموزشی دروس و آزمایشگاه‌های مهندسی</span></li>
+        <li><a href="https://www.udemy.com/certificate/UC-5ZIXCLGM/" target="_blank" rel="noopener"><span class="i18n-en">Complete Python: beginner to advanced course</span><span class="i18n-fa" lang="fa">دوره کامل پایتون: مقدماتی تا پیشرفته</span></a></li>
+        <li><a href="https://coursera.org/share/768e6d184216205c8d2b2932f0c5ef77" target="_blank" rel="noopener"><span class="i18n-en">Complete Machine Learning course</span><span class="i18n-fa" lang="fa">دوره کامل یادگیری ماشین</span></a></li>
+        <li><span class="i18n-en">Member of the faculty of engineering football team</span><span class="i18n-fa" lang="fa">عضو تیم فوتبال دانشکده مهندسی</span></li>
+        <li><a href="document/Physical_Fitness_Certification_Arman_Soltani.jpg" target="_blank" rel="noopener"><span class="i18n-en">Physical Fitness Coaching license</span><span class="i18n-fa" lang="fa">مدرک مربی‌گری آمادگی جسمانی</span></a></li>
+        <li><span class="i18n-en">CrossFit and functional training workshop</span><span class="i18n-fa" lang="fa">کارگاه کراس‌فیت و تمرینات فانکشنال</span></li>
+        <li><a href="document/Robocup_2010_Certificate_of_Participation_Arman_Soltani.jpg" target="_blank" rel="noopener"><span class="i18n-en">Participation in RoboCup Iran Open 2010</span><span class="i18n-fa" lang="fa">شرکت در مسابقات روبوکاپ ایران اوپن ۲۰۱۰</span></a></li>
+        <li><a href="document/C%23_Certification_Arman_Soltani.pdf" target="_blank" rel="noopener"><span class="i18n-en">C# programming language license</span><span class="i18n-fa" lang="fa">مدرک زبان برنامه‌نویسی سی‌شارپ</span></a></li>
+        <li><a href="document/DHTML_Certification_Arman_Soltani.pdf" target="_blank" rel="noopener"><span class="i18n-en">DHTML web design language license</span><span class="i18n-fa" lang="fa">مدرک زبان طراحی وب DHTML</span></a></li>
+        <li><a href="document/UNIX_Certification_Arman_Soltani.pdf" target="_blank" rel="noopener"><span class="i18n-en">UNIX user license</span><span class="i18n-fa" lang="fa">مدرک کاربری یونیکس</span></a></li>
       </ul>
     </div>
   </section>
@@ -382,14 +391,14 @@
   <!-- ============ CONTENT / DOWNLOADS ============ -->
   <section class="section" id="download" aria-labelledby="download-h">
     <div class="section__inner">
-      <p class="section__eyebrow reveal">03 / OUTPUTS</p>
-      <h2 id="download-h" class="section__title reveal">Content</h2>
+      <p class="section__eyebrow reveal"><span class="i18n-en">03 / OUTPUTS</span><span class="i18n-fa" lang="fa">۰۳ / خروجی‌ها</span></p>
+      <h2 id="download-h" class="section__title reveal"><span class="i18n-en">Content</span><span class="i18n-fa" lang="fa">محتوا</span></h2>
 
       <div class="resource-list">
         <a class="resource reveal" href="document/Arman%20Soltani%20-%20CV.pdf" target="_blank" rel="noopener">
           <span class="resource__icon"><svg viewBox="0 0 24 24" class="ic"><path d="M6 2h9l5 5v15H6z"></path><path d="M15 2v5h5"></path></svg></span>
           <span class="resource__text">
-            <span class="resource__title">Download my CV</span>
+            <span class="resource__title"><span class="i18n-en">Download my CV</span><span class="i18n-fa" lang="fa">دانلود رزومه من</span></span>
             <span class="resource__meta">PDF</span>
           </span>
           <span class="resource__go">↗</span>
@@ -397,15 +406,15 @@
         <a class="resource reveal" href="https://www.py4e.com/lessons" target="_blank" rel="noopener">
           <span class="resource__icon"><svg viewBox="0 0 24 24" class="ic"><path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1.5 1.5"></path><path d="M14 10a5 5 0 00-7 0l-3 3a5 5 0 007 7l1.5-1.5"></path></svg></span>
           <span class="resource__text">
-            <span class="resource__title">Python introduction</span>
-            <span class="resource__meta">External course</span>
+            <span class="resource__title"><span class="i18n-en">Python introduction</span><span class="i18n-fa" lang="fa">آموزش مقدماتی پایتون</span></span>
+            <span class="resource__meta"><span class="i18n-en">External course</span><span class="i18n-fa" lang="fa">دوره خارجی</span></span>
           </span>
           <span class="resource__go">↗</span>
         </a>
         <a class="resource reveal" href="content/crypto%20by%20Arman.pdf" target="_blank" rel="noopener">
           <span class="resource__icon"><svg viewBox="0 0 24 24" class="ic"><path d="M6 2h9l5 5v15H6z"></path><path d="M15 2v5h5"></path></svg></span>
           <span class="resource__text">
-            <span class="resource__title">Cryptocurrencies introduction</span>
+            <span class="resource__title"><span class="i18n-en">Cryptocurrencies introduction</span><span class="i18n-fa" lang="fa">آشنایی با ارزهای دیجیتال</span></span>
             <span class="resource__meta">PDF</span>
           </span>
           <span class="resource__go">↗</span>
@@ -413,8 +422,8 @@
         <a class="resource reveal" href="https://kohanfx.com/category/learning/" target="_blank" rel="noopener">
           <span class="resource__icon"><svg viewBox="0 0 24 24" class="ic"><path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1.5 1.5"></path><path d="M14 10a5 5 0 00-7 0l-3 3a5 5 0 007 7l1.5-1.5"></path></svg></span>
           <span class="resource__text">
-            <span class="resource__title">Trading courses</span>
-            <span class="resource__meta">External resource</span>
+            <span class="resource__title"><span class="i18n-en">Trading courses</span><span class="i18n-fa" lang="fa">دوره‌های ترید</span></span>
+            <span class="resource__meta"><span class="i18n-en">External resource</span><span class="i18n-fa" lang="fa">منبع خارجی</span></span>
           </span>
           <span class="resource__go">↗</span>
         </a>
@@ -425,15 +434,15 @@
   <!-- ============ CONTACT ============ -->
   <section class="section" id="contact" aria-labelledby="contact-h">
     <div class="section__inner">
-      <p class="section__eyebrow reveal">04 / I/O</p>
-      <h2 id="contact-h" class="section__title reveal">Contact</h2>
+      <p class="section__eyebrow reveal"><span class="i18n-en">04 / I/O</span><span class="i18n-fa" lang="fa">۰۴ / ورودی‌خروجی</span></p>
+      <h2 id="contact-h" class="section__title reveal"><span class="i18n-en">Contact</span><span class="i18n-fa" lang="fa">تماس</span></h2>
 
       <div class="terminal reveal">
         <div class="terminal__bar"><span></span><span></span><span></span></div>
         <div class="terminal__body">
-          <p><span class="t-prompt">$</span> phone <span class="t-arrow">→</span> <a href="tel:+989176339195">+98 917 633 9195</a></p>
-          <p><span class="t-prompt">$</span> email <span class="t-arrow">→</span> <a href="mailto:arman.soltani.as@gmail.com">arman.soltani.as@gmail.com</a></p>
-          <p><span class="t-prompt">$</span> status <span class="t-arrow">→</span> <span class="t-ok">open to new connections</span></p>
+          <p><span class="t-prompt">$</span> <span class="i18n-en">phone</span><span class="i18n-fa" lang="fa">تلفن</span> <span class="t-arrow">→</span> <a href="tel:+989176339195">+98 917 633 9195</a></p>
+          <p><span class="t-prompt">$</span> <span class="i18n-en">email</span><span class="i18n-fa" lang="fa">ایمیل</span> <span class="t-arrow">→</span> <a href="mailto:arman.soltani.as@gmail.com">arman.soltani.as@gmail.com</a></p>
+          <p><span class="t-prompt">$</span> <span class="i18n-en">status</span><span class="i18n-fa" lang="fa">وضعیت</span> <span class="t-arrow">→</span> <span class="t-ok"><span class="i18n-en">open to new connections</span><span class="i18n-fa" lang="fa">آماده ارتباط با افراد جدید</span></span></p>
         </div>
       </div>
 
@@ -452,7 +461,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>&copy; <span id="year"></span> Arman Soltani</p>
+  <p>&copy; <span id="year"></span> <span class="i18n-en">Arman Soltani </span><span class="i18n-fa" lang="fa">آرمان سلطانی </span></p>
 </footer>
 
 <script src="js/main.js"></script>
