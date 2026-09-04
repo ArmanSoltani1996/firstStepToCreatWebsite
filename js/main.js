@@ -116,6 +116,65 @@
     meters.forEach(m => m.classList.add("in-view"));
   }
 
+  /* ---------- Reveal-on-scroll ---------- */
+  const revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = (i % 6) * 0.06 + "s";
+          entry.target.classList.add("in-view");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    revealEls.forEach(el => revealObserver.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add("in-view"));
+  }
+
+  /* ---------- Parallax layers ---------- */
+  const parallaxEls = document.querySelectorAll("[data-speed]");
+  if (parallaxEls.length && !prefersReducedMotion) {
+    const updateParallax = () => {
+      const scrollTop = window.scrollY;
+      parallaxEls.forEach(el => {
+        const speed = parseFloat(el.dataset.speed) || 0.2;
+        el.style.transform = `translateY(${scrollTop * speed}px)`;
+      });
+    };
+    let pTicking = false;
+    window.addEventListener("scroll", () => {
+      if (!pTicking) {
+        requestAnimationFrame(() => { updateParallax(); pTicking = false; });
+        pTicking = true;
+      }
+    }, { passive: true });
+    updateParallax();
+  }
+
+  /* ---------- IC card spotlight + tilt ---------- */
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (canHover && !prefersReducedMotion) {
+    document.querySelectorAll(".ic-card").forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const px = x / rect.width;
+        const py = y / rect.height;
+        card.style.setProperty("--mx", (px * 100) + "%");
+        card.style.setProperty("--my", (py * 100) + "%");
+        card.style.setProperty("--rx", ((0.5 - py) * 6) + "deg");
+        card.style.setProperty("--ry", ((px - 0.5) * 8) + "deg");
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+      });
+    });
+  }
+
   /* ---------- Mobile menu toggle ---------- */
   const menuToggle = document.getElementById("menuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
