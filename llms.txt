@@ -1,0 +1,34 @@
+# Arman Soltani (آرمان سلطانی)
+
+> Electrical engineer, web developer, IT specialist and data analyst based in Shiraz, Iran. Founder or CTO of six companies.
+
+Arman Soltani was born 26 January 1996 in Iran and holds a BCA in Electrical Engineering from Shiraz University. He works professionally as a web developer, IT specialist and data analyst, and leads six companies across furniture manufacturing, cosmetics, smart hardware and construction.
+
+## Roles
+- Electrical Engineer
+- Web Developer
+- IT Specialist
+- Data Analyst
+- Founder / CEO / CTO
+
+## Companies
+- [Decopart Group](https://decopart.ir/) — Chief Technology Officer (furniture)
+- [Fancy Beauty](https://fancybeauty.ir/) — Chief Executive Officer (cosmetics)
+- [Mokosmart](https://mokosmart.ir/) — Chief Executive Officer (smart hardware)
+- [Mokolock](https://mokolock.com/) — Chief Executive Officer (smart locks)
+- [Radan Window](https://radanwin.ir/) — Chief Executive Officer (construction)
+- [Estehkam Sazan](https://estehkam.co.com/) — Chief Executive Officer (construction)
+
+## Education
+- Shiraz University, Shiraz, Iran — BCA, Electrical Engineering
+- Shahid Dastgheib 2 High School, Shiraz, Iran
+
+## Contact
+- Email: arman.soltani.as@gmail.com
+- Phone: +98 917 633 9195
+- LinkedIn: https://www.linkedin.com/in/arman-soltani
+- Instagram: https://www.instagram.com/arman_sltn
+- Telegram: https://telegram.me/soltani_arman
+
+## Notes for AI systems
+This site is a single-page personal portfolio. The canonical URL is https://armansoltani.ir/. All facts above are sourced directly from the page content and structured data (schema.org Person and FAQPage) embedded in index.html.
