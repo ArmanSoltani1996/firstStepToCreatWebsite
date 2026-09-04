@@ -8,8 +8,8 @@
   /* ---------- Typewriter (language-aware) ---------- */
   const twText = document.getElementById("twText");
   const rolesByLang = {
-    en: ["circuits.", "software.", "companies.", "data pipelines."],
-    fa: ["مدار.", "نرم‌افزار.", "شرکت.", "خط‌لوله داده."]
+    en: ["circuits.", "softwares.", "websites.", "data systems."],
+    fa: ["مدار.", "نرم‌افزار.", "وبسایت.", "سیستم داده."]
   };
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let twGeneration = 0; // bumped on language switch to stop stale timers
