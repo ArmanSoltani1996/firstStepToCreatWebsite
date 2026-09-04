@@ -24,6 +24,7 @@
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body:    'IBM Plex Sans', system-ui, sans-serif;
   --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
+  --font-fa:      'Vazirmatn', 'IBM Plex Sans', system-ui, sans-serif;
 
   --nav-w: 92px;
   --radius: 3px;
@@ -50,6 +51,61 @@ img{ max-width:100%; display:block; }
 ul{ list-style:none; margin:0; padding:0; }
 
 ::selection{ background:var(--copper-dim); color:var(--copper-bright); }
+
+/* =========================================================
+   BILINGUAL TOGGLE (EN / FA)
+   The nav-fixed elements (trace-nav, decorative hero chip) stay
+   physically anchored on the left in both languages; everything
+   inside <main> flips to a true right-to-left reading layout.
+   ========================================================= */
+.i18n-fa{ display:none; }
+[lang="fa"]{ font-family:var(--font-fa); }
+
+html.lang-fa .i18n-en{ display:none; }
+html.lang-fa .i18n-fa{ display:inline; }
+
+html.lang-fa main{ direction:rtl; }
+html.lang-fa .mobile-menu{ direction:rtl; }
+
+/* the fixed chrome (side rail + mobile topbar) stays physically
+   anchored regardless of language — force ltr to prevent the
+   inherited html[dir=rtl] from reordering/reflowing it */
+html.lang-fa .trace-nav,
+html.lang-fa .topbar,
+html.lang-fa .mobile-rail{ direction:ltr; }
+
+html.lang-fa .spec-row dd{ text-align:end; }
+html.lang-fa .honors-list li{ padding-inline-start:20px; padding-left:0; }
+html.lang-fa .honors-list li::before{ inset-inline-start:0; left:auto; }
+html.lang-fa .ic-card__designator{ inset-inline-end:14px; right:auto; }
+html.lang-fa .hero__quote{ max-width:460px; }
+html.lang-fa .t-prompt{ margin-inline-end:8px; margin-right:0; }
+
+/* Language toggle button */
+.lang-toggle{
+  display:flex; align-items:center; gap:6px;
+  background:none; border:1px solid var(--border);
+  border-radius:20px; padding:6px 12px;
+  font-family:var(--font-mono); font-size:.72rem; letter-spacing:.03em;
+  color:var(--text-dim); cursor:pointer;
+  transition:border-color .2s ease, color .2s ease;
+}
+.lang-toggle:hover{ border-color:var(--copper); color:var(--text); }
+.lang-toggle__sep{ opacity:.4; }
+.lang-toggle__opt{ padding:1px 2px; }
+.lang-toggle__opt.active{ color:var(--copper-bright); font-weight:500; }
+
+.trace-nav .lang-toggle{
+  position:absolute; bottom:22px; left:50%; transform:translateX(-50%);
+}
+
+.mobile-menu .lang-toggle--mobile{
+  display:flex; width:100%; border:none; border-radius:0;
+  padding:16px 22px; justify-content:flex-start;
+  border-bottom:1px solid var(--border-soft);
+  font-size:.85rem;
+}
+.mobile-menu .lang-toggle--mobile:hover{ color:var(--text-muted); }
 
 :focus-visible{
   outline:2px solid var(--copper-bright);
@@ -309,7 +365,7 @@ main{ margin-left:var(--nav-w); }
 }
 .hero__name-fa{
   position:relative; z-index:2;
-  font-family:BNazanin;
+  font-family:var(--font-body);
   font-size:1.2rem;
   color:var(--text-dim);
   margin:0 0 28px;
