@@ -309,7 +309,7 @@ main{ margin-left:var(--nav-w); }
 }
 .hero__name-fa{
   position:relative; z-index:2;
-  font-family:var(--font-body);
+  font-family:BNazanin;
   font-size:1.2rem;
   color:var(--text-dim);
   margin:0 0 28px;
