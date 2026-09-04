@@ -5,54 +5,59 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Typewriter ---------- */
+  /* ---------- Typewriter (language-aware) ---------- */
   const twText = document.getElementById("twText");
-  const roles = [
-    "circuits.",
-    "software.",
-    "companies.",
-    "data pipelines."
-  ];
+  const rolesByLang = {
+    en: ["circuits.", "software.", "companies.", "data pipelines."],
+    fa: ["مدار.", "نرم‌افزار.", "شرکت.", "خط‌لوله داده."]
+  };
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let twGeneration = 0; // bumped on language switch to stop stale timers
 
-  if (twText) {
+  const startTypewriter = (lang) => {
+    if (!twText) return;
+    const roles = rolesByLang[lang] || rolesByLang.en;
+    twGeneration++;
+    const myGen = twGeneration;
+
     if (prefersReducedMotion) {
       twText.textContent = roles[0];
-    } else {
-      let roleIndex = 0;
-      let charIndex = 0;
-      let deleting = false;
-
-      const TYPE_SPEED = 60;
-      const DELETE_SPEED = 35;
-      const HOLD_TIME = 1400;
-
-      const tick = () => {
-        const current = roles[roleIndex];
-        if (!deleting) {
-          charIndex++;
-          twText.textContent = current.slice(0, charIndex);
-          if (charIndex === current.length) {
-            deleting = true;
-            setTimeout(tick, HOLD_TIME);
-            return;
-          }
-          setTimeout(tick, TYPE_SPEED);
-        } else {
-          charIndex--;
-          twText.textContent = current.slice(0, charIndex);
-          if (charIndex === 0) {
-            deleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            setTimeout(tick, 300);
-            return;
-          }
-          setTimeout(tick, DELETE_SPEED);
-        }
-      };
-      setTimeout(tick, 500);
+      return;
     }
-  }
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+    const TYPE_SPEED = 60;
+    const DELETE_SPEED = 35;
+    const HOLD_TIME = 1400;
+
+    const tick = () => {
+      if (myGen !== twGeneration) return; // a newer language switch superseded this loop
+      const current = roles[roleIndex];
+      if (!deleting) {
+        charIndex++;
+        twText.textContent = current.slice(0, charIndex);
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(tick, HOLD_TIME);
+          return;
+        }
+        setTimeout(tick, TYPE_SPEED);
+      } else {
+        charIndex--;
+        twText.textContent = current.slice(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(tick, 300);
+          return;
+        }
+        setTimeout(tick, DELETE_SPEED);
+      }
+    };
+    setTimeout(tick, 400);
+  };
 
   /* ---------- Scroll progress: desktop trace fill + mobile rail ---------- */
   const traceFill = document.getElementById("traceFill");
@@ -174,6 +179,50 @@
       });
     });
   }
+
+  /* ---------- Language toggle (EN / FA) ---------- */
+  const html = document.documentElement;
+  const langButtons = document.querySelectorAll(".lang-toggle");
+
+  const applyLangUI = (lang) => {
+    langButtons.forEach(btn => {
+      btn.querySelectorAll(".lang-toggle__opt").forEach(opt => {
+        opt.classList.toggle("active", opt.dataset.lang === lang);
+      });
+    });
+    document.title = lang === "fa"
+      ? "آرمان سلطانی — مهندس برق، توسعه‌دهنده وب و متخصص فناوری اطلاعات"
+      : "Arman Soltani (آرمان سلطانی) — Electrical Engineer, Web Developer & IT Specialist";
+  };
+
+  const setLang = (lang, persist) => {
+    if (lang === "fa") {
+      html.classList.add("lang-fa");
+      html.setAttribute("lang", "fa");
+      html.setAttribute("dir", "rtl");
+    } else {
+      html.classList.remove("lang-fa");
+      html.setAttribute("lang", "en");
+      html.setAttribute("dir", "ltr");
+    }
+    applyLangUI(lang);
+    startTypewriter(lang);
+    if (persist) {
+      try { localStorage.setItem("site-lang", lang); } catch (e) {}
+    }
+  };
+
+  // Sync button states + typewriter with whatever the pre-paint script already applied
+  const initialLang = html.classList.contains("lang-fa") ? "fa" : "en";
+  applyLangUI(initialLang);
+  startTypewriter(initialLang);
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const next = html.classList.contains("lang-fa") ? "en" : "fa";
+      setLang(next, true);
+    });
+  });
 
   /* ---------- Mobile menu toggle ---------- */
   const menuToggle = document.getElementById("menuToggle");
